@@ -1,17 +1,17 @@
 # TODO: bootsplash
 
 %define		_name	baghira
-%define		_name_ver	0.5b
+%define		_name_ver	0.5g
 
 Summary:	KDE theme - %{_name}
 Summary(pl):	Motyw KDE - %{_name}
 Name:		kde-theme-%{_name}
 Version:	%{_name_ver}
-Release:	2
+Release:	1
 License:	Not specified
 Group:		Themes
 Source0:	http://osdn.dl.sourceforge.net/sourceforge/baghira/%{_name}-%{_name_ver}.tar.bz2
-# Source0-md5:	fb721c54cc94cbe80915b0ed721c5879
+# Source0-md5:	5f6a2534fd1756fe5a702302d00638a3
 Source1:	http://ep09.pld-linux.org/~havner/aqua-wallpapers.tar.bz2
 # Source1-md5:	a18467bf8195ee7ad0472aff57a6770e
 Source2:	http://kde-look.org/content/files/8993-AquaBaghira-0.5.tar.gz
@@ -242,7 +242,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT
-install Gooddies/scripts/* $RPM_BUILD_ROOT%{_bindir}
+#install Gooddies/scripts/* $RPM_BUILD_ROOT%{_bindir}
 
 install -d $RPM_BUILD_ROOT%{_datadir}/apps/kdisplay/color-schemes
 install colorscheme/*.kcsrc $RPM_BUILD_ROOT%{_datadir}/apps/kdisplay/color-schemes
@@ -291,9 +291,12 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %{_libdir}/kde3/kstyle_baghira_config.la
 %attr(755,root,root) %{_libdir}/kde3/kstyle_baghira_config.so
+%{_libdir}/kde3/b_menu_panelapplet.la
+%attr(755,root,root) %{_libdir}/kde3/b_menu_panelapplet.so
 %{_libdir}/kde3/plugins/styles/*.la
 %attr(755,root,root) %{_libdir}/kde3/plugins/styles/*.so
 %{_datadir}/apps/kstyle/themes/*.themerc
+%{_datadir}/apps/kicker/applets/*.desktop
 # %{_desktopdir}/kde/kstyle_baghira_config.desktop
 %attr(755,root,root) %{_bindir}/*
 %{_iconsdir}/crystalsvg/*/*/*
