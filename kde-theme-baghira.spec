@@ -9,7 +9,7 @@ Version:	%{_name_ver}
 Release:	1
 License:	Not specified
 Group:		Themes
-Source0:	http://dl.sourceforge.net/baghira/%{_name}-0.3s.tar.bz2
+Source0:	http://osdn.dl.sourceforge.net/sourceforge/baghira/%{_name}-%{_name_ver}.tar.bz2
 # Source0-md5:	2329ed994c608926cadfd18c8266bc2f
 Source1:	http://dl.sourceforge.net/baghira/%{_name}-deco-0.4-pre5.tar.bz2
 # Source1-md5:	488f581685e02584ee9be50bd230a50b
