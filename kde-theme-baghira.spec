@@ -25,10 +25,10 @@ Requires:	kdelibs
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
-%{_name} is 
+%{_name} KDE theme.
 
 %description -l pl
-%{_name} a theme 
+Motyw KDE %{_name}.
 
 %package -n kde-style-%{_name}
 Summary:	KDE style - %{_name}
@@ -220,20 +220,20 @@ cd -
 
 %install
 rm -rf $RPM_BUILD_ROOT
-# create dirs if necessary
-#install -d $RPM_BUILD_ROOT
 
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT
 cd %{_name}-deco-0.4-pre4
-%{__make} DESTDIR=$RPM_BUILD_ROOT install 
+%{__make} install \
+	DESTDIR=$RPM_BUILD_ROOT
 install -d $RPM_BUILD_ROOT%{_datadir}/apps/kdisplay/color-schemes
-install *.kcsrc $RPM_BUILD_ROOT%{_datadir}/apps/kdisplay/color-schemes/
+install *.kcsrc $RPM_BUILD_ROOT%{_datadir}/apps/kdisplay/color-schemes
 cd -
 install -d $RPM_BUILD_ROOT%{_desktopdir}/kde
-mv $RPM_BUILD_ROOT{%{_datadir}/applnk/Settings/LookNFeel/,%{_desktopdir}/kde/}kcmbaghira.desktop
-echo "Categories=Qt;KDE;X-KDE-settings-looknfeel" >> $RPM_BUILD_ROOT%{_desktopdir}/kde/kcmbaghira.desktop
-echo "OnlyShowIn=KDE" >>  $RPM_BUILD_ROOT%{_desktopdir}/kde/kcmbaghira.desktop
+mv $RPM_BUILD_ROOT{%{_datadir}/applnk/Settings/LookNFeel,%{_desktopdir}/kde}/kcmbaghira.desktop
+echo "Categories=Qt;KDE;X-KDE-settings-looknfeel;" >> $RPM_BUILD_ROOT%{_desktopdir}/kde/kcmbaghira.desktop
+echo "OnlyShowIn=KDE;" >> $RPM_BUILD_ROOT%{_desktopdir}/kde/kcmbaghira.desktop
+
 %clean
 rm -rf $RPM_BUILD_ROOT
 
