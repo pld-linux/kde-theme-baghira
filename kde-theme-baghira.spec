@@ -1,3 +1,4 @@
+# TODO: icons
 
 %define		_name	baghira
 %define		_name_ver	0.4
@@ -31,7 +32,6 @@ Source9:	ftp://distfiles.pld-linux.org/src/%{_name}-ksplash.tar.gz
 # Source9-md5:	466cee31900639b5d633f008890b9f18
 Source10:	Baghira-Lime.kcsrc
 Patch0:		%{name}-gcc34fix.patch
-Patch1:		%{name}-qteff.patch
 URL:		http://www.kde-look.org/content/show.php?content=8692
 # Also:	http://www.kde-look.org/content/show.php?content=11149
 BuildRequires:	autoconf
@@ -218,7 +218,6 @@ Dekoracja kwin - %{_name}.
 %prep
 %setup -q -n %{_name}-%{_name_ver} -a1 -a2 -a9
 #%patch0 -p1
-#%patch1 -p1
 
 %build
 kde_htmldir="%{_kdedocdir}"; export kde_htmldir
@@ -232,12 +231,6 @@ cp -f /usr/share/automake/config.sub admin
 	--enable-final
 
 %{__make}
-
-#cd %{_name}-deco-0.4-pre5
-#cp -f /usr/share/automake/config.sub admin
-#%%configure \
-#	--with-qt-libraries=%{_libdir}
-#%{__make}
 
 %install
 rm -rf $RPM_BUILD_ROOT
