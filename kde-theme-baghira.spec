@@ -235,7 +235,7 @@ cp -f /usr/share/automake/config.sub admin
 
 #cd %{_name}-deco-0.4-pre5
 #cp -f /usr/share/automake/config.sub admin
-#%configure \
+#%%configure \
 #	--with-qt-libraries=%{_libdir}
 #%{__make}
 
