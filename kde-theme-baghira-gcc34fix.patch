@@ -1,0 +1,11 @@
+--- baghira-0.3p/kcmbaghira/kcmbaghira.cpp.orig	2004-05-13 13:46:14.211143976 +0200
++++ baghira-0.3p/kcmbaghira/kcmbaghira.cpp	2004-05-13 13:46:24.508578528 +0200
+@@ -479,7 +479,7 @@
+ 	connect( drawDotlines, SIGNAL( toggled( bool ) ), buttonGroup9, SLOT( setEnabled( bool ) ) );
+ 	connect( useCustomExpanderColor, SIGNAL( toggled( bool ) ), expanderColor, SLOT( setEnabled( bool ) ) );
+ 	load();
+-	};
++	}
+ 
+ 
+ kcmbaghira::~kcmbaghira() {}
