@@ -32,6 +32,7 @@ Source9:	ftp://distfiles.pld-linux.org/src/%{_name}-ksplash.tar.gz
 # Source9-md5:	466cee31900639b5d633f008890b9f18
 Source10:	Baghira-Lime.kcsrc
 Patch0:		%{name}-gcc34fix.patch
+Patch1:		%{name}-BE.patch
 URL:		http://www.kde-look.org/content/show.php?content=8692
 # Also:	http://www.kde-look.org/content/show.php?content=11149
 BuildRequires:	autoconf
@@ -218,6 +219,10 @@ Dekoracja kwin - %{_name}.
 %prep
 %setup -q -n %{_name}-%{_name_ver} -a1 -a2 -a9
 #%patch0 -p1
+%ifarch ppc sparc
+%patch1 -p0 
+%endif 
+
 
 %build
 kde_htmldir="%{_kdedocdir}"; export kde_htmldir

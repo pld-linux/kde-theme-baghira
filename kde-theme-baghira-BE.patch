@@ -1,0 +1,39 @@
+--- ./deco/config/aquariusbutton.cc~	2004-09-06 01:16:12.544401776 +0200
++++ ./deco/config/aquariusbutton.cc	2004-09-06 01:16:12.545401624 +0200
+@@ -32,8 +32,8 @@
+    destG = (S*destG + (100-S)*G)/100; \
+    destB = (S*destB + (100-S)*B)/100;
+    
+-#define _ENDIAN_ QImage::LittleEndian
+-//#define _ENDIAN_ QImage::BigEndian
++//#define _ENDIAN_ QImage::LittleEndian
++#define _ENDIAN_ QImage::BigEndian
+    
+ AquariusButton::AquariusButton( QPixmap &pixmap, QWidget* parent, const char* name) : QWidget( parent, name){
+     pixmap = pixmap;
+--- ./deco/baghiraclient.h~	2004-09-06 01:15:58.551529016 +0200
++++ ./deco/baghiraclient.h	2004-09-06 01:15:58.552528864 +0200
+@@ -39,8 +39,8 @@
+ #define TITLESIZESMALL 18;
+ #define MARGIN 4;*/
+ 
+-#define _ENDIAN_ QImage::LittleEndian
+-//#define _ENDIAN_ QImage::BigEndian
++//#define _ENDIAN_ QImage::LittleEndian
++#define _ENDIAN_ QImage::BigEndian
+ 
+ class QSpacerItem;
+ class QPoint;
+--- ./style/baghira.h~	2004-09-06 01:16:29.447832064 +0200
++++ ./style/baghira.h	2004-09-06 01:16:29.448831912 +0200
+@@ -50,8 +50,8 @@
+ #define BITMAP_ITEMS 85 // Don't worry, they're demand loaded ;-)
+ #define LIQUID_MENU_CHANGE 667
+ #define MOSFET_BUTTON_CHANGE 661
+-#define _ENDIAN_ QImage::LittleEndian
+-//#define _ENDIAN_ QImage::BigEndian
++//#define _ENDIAN_ QImage::LittleEndian
++#define _ENDIAN_ QImage::BigEndian
+ 
+ 
+ //#endif // QT_EFF
