@@ -1,16 +1,16 @@
 
 %define		_name	baghira
-%define		_name_ver	0.3r
+%define		_name_ver	0.3s
 
 Summary:	KDE theme - %{_name}
 Summary(pl):	Motyw KDE - %{_name}
 Name:		kde-theme-%{_name}
 Version:	%{_name_ver}
-Release:	2
+Release:	1
 License:	Not specified
 Group:		Themes
-Source0:	http://dl.sourceforge.net/baghira/%{_name}-0.3r.tar.bz2
-# Source0-md5:	b4e359e4300f6f428255239f70e8dc3a
+Source0:	http://dl.sourceforge.net/baghira/%{_name}-0.3s.tar.bz2
+# Source0-md5:	2329ed994c608926cadfd18c8266bc2f
 Source1:	http://dl.sourceforge.net/baghira/%{_name}-deco-0.4-pre5.tar.bz2
 # Source1-md5:	488f581685e02584ee9be50bd230a50b
 Source2:	http://kde-look.org/content/files/8993-AquaBaghira-0.5.tar.gz
@@ -215,7 +215,7 @@ Kwin decoration - %{_name}.
 Dekoracja kwin - %{_name}.
 
 %prep
-%setup -q -n %{_name} -a1 -a2 -a9
+%setup -q -n %{_name}-%{_name_ver} -a1 -a2 -a9
 %patch0 -p1
 
 %build
