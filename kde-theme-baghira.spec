@@ -1,6 +1,6 @@
 
 %define		_name	baghira
-%define		_name_ver	0.3p
+%define		_name_ver	0.3q
 
 Summary:	KDE theme - %{_name}
 Summary(pl):	Motyw KDE - %{_name}
@@ -9,8 +9,8 @@ Version:	%{_name_ver}
 Release:	1
 License:	Not specified
 Group:		Themes
-Source0:	http://dl.sourceforge.net/sourceforge/baghira/%{_name}-0.3p.tar.bz2
-# Source0-md5:	5901bb118874bc9d55f1c7930037b5b8
+Source0:	http://dl.sourceforge.net/sourceforge/baghira/%{_name}-0.3q.tar.bz2
+# Source0-md5:	5ce2db262f061f6fbb0c026bf2c77d82
 Source1:	http://dl.sourceforge.net/sourceforge/baghira/%{_name}-deco-0.4-pre4.tar.bz2
 # Source1-md5:	7bf8cfb50c85535b120238f23b514f2a
 Patch0:		%{name}-gcc34fix.patch
