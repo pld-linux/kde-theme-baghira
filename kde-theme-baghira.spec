@@ -1,7 +1,7 @@
 # TODO: bootsplash
 
 %define		_name	baghira
-%define		_name_ver	0.5h
+%define		_name_ver	0.6
 
 Summary:	KDE theme - %{_name}
 Summary(pl):	Motyw KDE - %{_name}
@@ -11,7 +11,7 @@ Release:	1
 License:	Not specified
 Group:		Themes
 Source0:	http://osdn.dl.sourceforge.net/sourceforge/baghira/%{_name}-%{_name_ver}.tar.bz2
-# Source0-md5:	eac4696c0d66b172aac0dd037e60b4b7
+# Source0-md5:	405e7a5c584fc2250aee972f4ed3d6c7
 Source1:	http://ep09.pld-linux.org/~havner/aqua-wallpapers.tar.bz2
 # Source1-md5:	a18467bf8195ee7ad0472aff57a6770e
 Source2:	http://kde-look.org/content/files/8993-AquaBaghira-0.5.tar.gz
@@ -32,7 +32,6 @@ Source9:	ftp://distfiles.pld-linux.org/src/%{_name}-ksplash.tar.gz
 # Source9-md5:	466cee31900639b5d633f008890b9f18
 Source10:	Baghira-Lime.kcsrc
 URL:		http://www.kde-look.org/content/show.php?content=8692
-# Also:	http://www.kde-look.org/content/show.php?content=11149
 BuildRequires:	autoconf
 BuildRequires:	automake
 BuildRequires:	freetype-devel
@@ -92,7 +91,6 @@ Schemat kolorów do stylu KDE - %{_name}
 Summary:	KDE wallpaper - %{_name}
 Summary(pl):	Tapeta do KDE - %{_name}
 Group:		Themes
-# Contains /usr/share/wallpapers
 Requires:	kdelibs
 
 %description -n kde-wallpaper-%{_name}
@@ -105,7 +103,6 @@ Tapeta pasuj±ca do motywu %{_name}.
 Summary:	KDM user picture - %{_name}
 Summary(pl):	Obrazki dla u¿ytkowników w KDM - %{_name}
 Group:		Themes
-# Contains /usr/share/wallpapers
 Requires:	kdm
 
 %description -n kdm-user-pictures-%{_name}
@@ -238,7 +235,6 @@ rm -rf $RPM_BUILD_ROOT
 
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT
-#install Gooddies/scripts/* $RPM_BUILD_ROOT%{_bindir}
 
 install -d $RPM_BUILD_ROOT%{_datadir}/apps/kdisplay/color-schemes
 install colorscheme/*.kcsrc $RPM_BUILD_ROOT%{_datadir}/apps/kdisplay/color-schemes
@@ -293,7 +289,6 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_libdir}/kde3/plugins/styles/*.so
 %{_datadir}/apps/kstyle/themes/*.themerc
 %{_datadir}/apps/kicker/applets/*.desktop
-# %{_desktopdir}/kde/kstyle_baghira_config.desktop
 %attr(755,root,root) %{_bindir}/*
 %{_iconsdir}/crystalsvg/*/*/*
 
