@@ -1,0 +1,26 @@
+[Color Scheme]
+Name=Lime Baghira
+activeBackground=185,185,185
+activeBlend=140,140,140
+activeForeground=0,0,0
+activeTitleBtnBg=187,255,175
+alternateBackground=240,255,238
+background=250,250,250
+buttonBackground=151,255,122
+buttonForeground=0,0,0
+contrast=7
+foreground=0,0,0
+frame=250,250,250
+handle=250,250,250
+inactiveBackground=170,170,170
+inactiveBlend=125,125,125
+inactiveForeground=240,240,240
+inactiveFrame=250,250,250
+inactiveHandle=250,250,250
+inactiveTitleBtnBg=225,255,218
+linkColor=0,0,192
+selectBackground=74,207,81
+selectForeground=255,255,255
+visitedLinkColor=128,0,128
+windowBackground=255,255,255
+windowForeground=0,0,0
