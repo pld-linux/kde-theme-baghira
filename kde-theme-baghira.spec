@@ -6,12 +6,12 @@ Summary:	KDE theme - %{_name}
 Summary(pl):	Motyw KDE - %{_name}
 Name:		kde-theme-%{_name}
 Version:	%{_name_ver}
-Release:	1
+Release:	2
 License:	Not specified
 Group:		Themes
-Source0:	http://dl.sourceforge.net/sourceforge/baghira/%{_name}-0.3q.tar.bz2
+Source0:	http://dl.sourceforge.net/baghira/%{_name}-0.3q.tar.bz2
 # Source0-md5:	5ce2db262f061f6fbb0c026bf2c77d82
-Source1:	http://dl.sourceforge.net/sourceforge/baghira/%{_name}-deco-0.4-pre4.tar.bz2
+Source1:	http://dl.sourceforge.net/baghira/%{_name}-deco-0.4-pre4.tar.bz2
 # Source1-md5:	7bf8cfb50c85535b120238f23b514f2a
 Patch0:		%{name}-gcc34fix.patch
 URL:		http://www.kde-look.org/content/show.php?content=8692
@@ -20,7 +20,7 @@ BuildRequires:	autoconf
 BuildRequires:	automake
 BuildRequires:	freetype-devel
 BuildRequires:	kdelibs-devel
-BuildRequires:	unsermake
+#BuildRequires:	unsermake
 Requires:	kdelibs
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -150,9 +150,9 @@ Obrazek startowy dla motywu %{_name}.
 Summary:	Kicker sidebar from %{_name}
 Summary(pl):	Boczny pasek do menu kde z motywu %{_name}
 Group:		Themes
-Obsoletes:	kde-kside
-Provides:	kde-kside
 Requires:	kdebase-kicker >= 9:3.1.90.030726-2
+Provides:	kde-kside
+Obsoletes:	kde-kside
 
 %description -n kde-kside-%{_name}
 Kicker sidebar from %{_name}.
@@ -208,27 +208,30 @@ cp -f /usr/share/automake/config.sub admin
 ##export UNSERMAKE=/usr/share/unsermake/unsermake
 ##%{__make} -f Makefile.cvs
 
-%configure
+%configure \
+	--with-qt-libraries=%{_libdir}
 
 %{__make}
 
 cd %{_name}-deco-0.4-pre4
 cp -f /usr/share/automake/config.sub admin
-%configure
+%configure \
+	--with-qt-libraries=%{_libdir}
 %{__make}
-cd -
 
 %install
 rm -rf $RPM_BUILD_ROOT
 
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT
+
 cd %{_name}-deco-0.4-pre4
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT
 install -d $RPM_BUILD_ROOT%{_datadir}/apps/kdisplay/color-schemes
 install *.kcsrc $RPM_BUILD_ROOT%{_datadir}/apps/kdisplay/color-schemes
 cd -
+
 install -d $RPM_BUILD_ROOT%{_desktopdir}/kde
 mv $RPM_BUILD_ROOT{%{_datadir}/applnk/Settings/LookNFeel,%{_desktopdir}/kde}/kcmbaghira.desktop
 echo "Categories=Qt;KDE;X-KDE-settings-looknfeel;" >> $RPM_BUILD_ROOT%{_desktopdir}/kde/kcmbaghira.desktop
