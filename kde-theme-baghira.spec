@@ -11,8 +11,8 @@ License:	Not specified
 Group:		Themes
 Source0:	http://osdn.dl.sourceforge.net/sourceforge/baghira/%{_name}-%{_name_ver}.tar.bz2
 # Source0-md5:	31b5aca10535ee76d4a45d02a1f786cd
-Source1:	http://dl.sourceforge.net/baghira/%{_name}-deco-0.4-pre5.tar.bz2
-# Source1-md5:	488f581685e02584ee9be50bd230a50b
+Source1:	http://ep09.pld-linux.org/~havner/aqua-wallpapers.tar.bz2
+# Source1-md5:	a18467bf8195ee7ad0472aff57a6770e
 Source2:	http://kde-look.org/content/files/8993-AquaBaghira-0.5.tar.gz
 # Source2-md5:	d5fbd627b8f50a0c24ccd1610e8cd248
 Source3:	http://kde-look.org/content/files/9157-kde1_1024x768.jpg
@@ -30,8 +30,6 @@ Source8:	http://kde-look.org/content/files/9152-Aqua1_1600x1200.jpg
 Source9:	ftp://distfiles.pld-linux.org/src/%{_name}-ksplash.tar.gz
 # Source9-md5:	466cee31900639b5d633f008890b9f18
 Source10:	Baghira-Lime.kcsrc
-Source11:	http://ep09.pld-linux.org/~havner/aqua-wallpapers.tar.bz2
-# Source11-md5:	a18467bf8195ee7ad0472aff57a6770e
 Patch0:		%{name}-gcc34fix.patch
 Patch1:		%{name}-qteff.patch
 URL:		http://www.kde-look.org/content/show.php?content=8692
@@ -218,7 +216,7 @@ Kwin decoration - %{_name}.
 Dekoracja kwin - %{_name}.
 
 %prep
-%setup -q -n %{_name}-%{_name_ver} -a2 -a9 -a11
+%setup -q -n %{_name}-%{_name_ver} -a1 -a2 -a9
 #%patch0 -p1
 #%patch1 -p1
 
@@ -230,7 +228,8 @@ cp -f /usr/share/automake/config.sub admin
 ##%{__make} -f Makefile.cvs
 
 %configure \
-	--with-qt-libraries=%{_libdir}
+	--with-qt-libraries=%{_libdir} \
+	--enable-final
 
 %{__make}
 
@@ -247,15 +246,10 @@ rm -rf $RPM_BUILD_ROOT
 	DESTDIR=$RPM_BUILD_ROOT
 install scripts/* $RPM_BUILD_ROOT%{_bindir}
 
-#cd %{_name}-deco-0.4-pre5
-#%{__make} install \
-#	DESTDIR=$RPM_BUILD_ROOT
-#install -d $RPM_BUILD_ROOT%{_datadir}/apps/kdisplay/color-schemes
-#install *.kcsrc $RPM_BUILD_ROOT%{_datadir}/apps/kdisplay/color-schemes
-#cd -
+install -d $RPM_BUILD_ROOT%{_datadir}/apps/kdisplay/color-schemes
+install colorscheme/*.kcsrc $RPM_BUILD_ROOT%{_datadir}/apps/kdisplay/color-schemes
 
 install -d $RPM_BUILD_ROOT%{_desktopdir}/kde
-#echo "Categories=Qt;KDE;X-KDE-settings-looknfeel;" >> $RPM_BUILD_ROOT%{_desktopdir}/kde/kstyle_baghira_config.desktop
 echo "OnlyShowIn=KDE;" >> $RPM_BUILD_ROOT%{_desktopdir}/kde/kstyle_baghira_config.desktop
 
 install -d $RPM_BUILD_ROOT%{_datadir}/wallpapers
