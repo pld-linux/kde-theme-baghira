@@ -1,16 +1,16 @@
 
 %define		_name	baghira
-%define		_name_ver	0.3s
+%define		_name_ver	0.4
 
 Summary:	KDE theme - %{_name}
 Summary(pl):	Motyw KDE - %{_name}
 Name:		kde-theme-%{_name}
 Version:	%{_name_ver}
-Release:	2
+Release:	1
 License:	Not specified
 Group:		Themes
 Source0:	http://osdn.dl.sourceforge.net/sourceforge/baghira/%{_name}-%{_name_ver}.tar.bz2
-# Source0-md5:	2329ed994c608926cadfd18c8266bc2f
+# Source0-md5:	31b5aca10535ee76d4a45d02a1f786cd
 Source1:	http://dl.sourceforge.net/baghira/%{_name}-deco-0.4-pre5.tar.bz2
 # Source1-md5:	488f581685e02584ee9be50bd230a50b
 Source2:	http://kde-look.org/content/files/8993-AquaBaghira-0.5.tar.gz
@@ -218,9 +218,9 @@ Kwin decoration - %{_name}.
 Dekoracja kwin - %{_name}.
 
 %prep
-%setup -q -n %{_name}-%{_name_ver} -a1 -a2 -a9 -a11
-%patch0 -p1
-%patch1 -p1
+%setup -q -n %{_name}-%{_name_ver} -a2 -a9 -a11
+#%patch0 -p1
+#%patch1 -p1
 
 %build
 kde_htmldir="%{_kdedocdir}"; export kde_htmldir
@@ -234,30 +234,29 @@ cp -f /usr/share/automake/config.sub admin
 
 %{__make}
 
-cd %{_name}-deco-0.4-pre5
-cp -f /usr/share/automake/config.sub admin
-%configure \
-	--with-qt-libraries=%{_libdir}
-%{__make}
+#cd %{_name}-deco-0.4-pre5
+#cp -f /usr/share/automake/config.sub admin
+#%configure \
+#	--with-qt-libraries=%{_libdir}
+#%{__make}
 
 %install
 rm -rf $RPM_BUILD_ROOT
 
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT
-install bab/scripts/* $RPM_BUILD_ROOT%{_bindir}
+install scripts/* $RPM_BUILD_ROOT%{_bindir}
 
-cd %{_name}-deco-0.4-pre5
-%{__make} install \
-	DESTDIR=$RPM_BUILD_ROOT
-install -d $RPM_BUILD_ROOT%{_datadir}/apps/kdisplay/color-schemes
-install *.kcsrc $RPM_BUILD_ROOT%{_datadir}/apps/kdisplay/color-schemes
-cd -
+#cd %{_name}-deco-0.4-pre5
+#%{__make} install \
+#	DESTDIR=$RPM_BUILD_ROOT
+#install -d $RPM_BUILD_ROOT%{_datadir}/apps/kdisplay/color-schemes
+#install *.kcsrc $RPM_BUILD_ROOT%{_datadir}/apps/kdisplay/color-schemes
+#cd -
 
 install -d $RPM_BUILD_ROOT%{_desktopdir}/kde
-mv $RPM_BUILD_ROOT{%{_datadir}/applnk/Settings/LookNFeel,%{_desktopdir}/kde}/kcmbaghira.desktop
-echo "Categories=Qt;KDE;X-KDE-settings-looknfeel;" >> $RPM_BUILD_ROOT%{_desktopdir}/kde/kcmbaghira.desktop
-echo "OnlyShowIn=KDE;" >> $RPM_BUILD_ROOT%{_desktopdir}/kde/kcmbaghira.desktop
+#echo "Categories=Qt;KDE;X-KDE-settings-looknfeel;" >> $RPM_BUILD_ROOT%{_desktopdir}/kde/kstyle_baghira_config.desktop
+echo "OnlyShowIn=KDE;" >> $RPM_BUILD_ROOT%{_desktopdir}/kde/kstyle_baghira_config.desktop
 
 install -d $RPM_BUILD_ROOT%{_datadir}/wallpapers
 install %{SOURCE3} $RPM_BUILD_ROOT%{_datadir}/wallpapers/baghira-1024x768.jpg
@@ -298,12 +297,12 @@ rm -rf $RPM_BUILD_ROOT
 
 %files -n kde-style-%{_name}
 %defattr(644,root,root,755)
-%{_libdir}/kde3/kcm_*.la
-%attr(755,root,root) %{_libdir}/kde3/kcm_*.so
+%{_libdir}/kde3/kstyle_baghira_config.la
+%attr(755,root,root) %{_libdir}/kde3/kstyle_baghira_config.so
 %{_libdir}/kde3/plugins/styles/*.la
 %attr(755,root,root) %{_libdir}/kde3/plugins/styles/*.so
 %{_datadir}/apps/kstyle/themes/*.themerc
-%{_desktopdir}/kde/kcmbaghira.desktop
+%{_desktopdir}/kde/kstyle_baghira_config.desktop
 %attr(755,root,root) %{_bindir}/*
 
 %files -n kde-colorscheme-%{_name}
