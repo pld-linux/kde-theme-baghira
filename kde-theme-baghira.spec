@@ -10,7 +10,7 @@ Version:	%{_name_ver}
 Release:	1
 License:	Not specified
 Group:		Themes
-Source0:	http://osdn.dl.sourceforge.net/sourceforge/baghira/%{_name}-%{_name_ver}.tar.bz2
+Source0:	http://dl.sourceforge.net/baghira/%{_name}-%{_name_ver}.tar.bz2
 # Source0-md5:	c24e3bac8e4b992e5c9ca6a6cc18eac3
 Source1:	http://ep09.pld-linux.org/~havner/aqua-wallpapers.tar.bz2
 # Source1-md5:	a18467bf8195ee7ad0472aff57a6770e
