@@ -1,7 +1,7 @@
 # TODO: bootsplash
 
 %define		_name	baghira
-%define		_name_ver	0.5g
+%define		_name_ver	0.5h
 
 Summary:	KDE theme - %{_name}
 Summary(pl):	Motyw KDE - %{_name}
@@ -11,7 +11,7 @@ Release:	1
 License:	Not specified
 Group:		Themes
 Source0:	http://osdn.dl.sourceforge.net/sourceforge/baghira/%{_name}-%{_name_ver}.tar.bz2
-# Source0-md5:	5f6a2534fd1756fe5a702302d00638a3
+# Source0-md5:	eac4696c0d66b172aac0dd037e60b4b7
 Source1:	http://ep09.pld-linux.org/~havner/aqua-wallpapers.tar.bz2
 # Source1-md5:	a18467bf8195ee7ad0472aff57a6770e
 Source2:	http://kde-look.org/content/files/8993-AquaBaghira-0.5.tar.gz
@@ -31,8 +31,6 @@ Source8:	http://kde-look.org/content/files/9152-Aqua1_1600x1200.jpg
 Source9:	ftp://distfiles.pld-linux.org/src/%{_name}-ksplash.tar.gz
 # Source9-md5:	466cee31900639b5d633f008890b9f18
 Source10:	Baghira-Lime.kcsrc
-Patch0:		%{name}-gcc34fix.patch
-Patch1:		%{name}-BE.patch
 URL:		http://www.kde-look.org/content/show.php?content=8692
 # Also:	http://www.kde-look.org/content/show.php?content=11149
 BuildRequires:	autoconf
@@ -218,11 +216,9 @@ Dekoracja kwin - %{_name}.
 
 %prep
 %setup -q -n %{_name}-%{_name_ver} -a1 -a2 -a9
-#%patch0 -p1
 %ifarch ppc sparc
-%patch1 -p0 
-%endif 
-
+sed -i -e "s/#define HAVE_PPC.*/#define HAVE_PPC 1/g" ppc.h
+%endif
 
 %build
 kde_htmldir="%{_kdedocdir}"; export kde_htmldir
