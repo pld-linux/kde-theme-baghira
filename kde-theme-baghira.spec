@@ -7,7 +7,7 @@ Summary:	KDE theme - %{_name}
 Summary(pl):	Motyw KDE - %{_name}
 Name:		kde-theme-%{_name}
 Version:	%{_name_ver}
-Release:	1
+Release:	2
 License:	Not specified
 Group:		Themes
 Source0:	http://osdn.dl.sourceforge.net/sourceforge/baghira/%{_name}-%{_name_ver}.tar.bz2
@@ -247,8 +247,8 @@ install Gooddies/scripts/* $RPM_BUILD_ROOT%{_bindir}
 install -d $RPM_BUILD_ROOT%{_datadir}/apps/kdisplay/color-schemes
 install colorscheme/*.kcsrc $RPM_BUILD_ROOT%{_datadir}/apps/kdisplay/color-schemes
 
-install -d $RPM_BUILD_ROOT%{_desktopdir}/kde
-echo "OnlyShowIn=KDE;" >> $RPM_BUILD_ROOT%{_desktopdir}/kde/kstyle_baghira_config.desktop
+# install -d $RPM_BUILD_ROOT%{_desktopdir}/kde
+# echo "OnlyShowIn=KDE;" >> $RPM_BUILD_ROOT%{_desktopdir}/kde/kstyle_baghira_config.desktop
 
 install -d $RPM_BUILD_ROOT%{_datadir}/wallpapers
 install %{SOURCE3} $RPM_BUILD_ROOT%{_datadir}/wallpapers/baghira-1024x768.jpg
@@ -294,7 +294,7 @@ rm -rf $RPM_BUILD_ROOT
 %{_libdir}/kde3/plugins/styles/*.la
 %attr(755,root,root) %{_libdir}/kde3/plugins/styles/*.so
 %{_datadir}/apps/kstyle/themes/*.themerc
-%{_desktopdir}/kde/kstyle_baghira_config.desktop
+# %{_desktopdir}/kde/kstyle_baghira_config.desktop
 %attr(755,root,root) %{_bindir}/*
 %{_iconsdir}/crystalsvg/*/*/*
 
