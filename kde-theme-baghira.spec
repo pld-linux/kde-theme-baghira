@@ -6,7 +6,7 @@ Summary:	KDE theme - %{_name}
 Summary(pl):	Motyw KDE - %{_name}
 Name:		kde-theme-%{_name}
 Version:	%{_name_ver}
-Release:	1
+Release:	2
 License:	Not specified
 Group:		Themes
 Source0:	http://dl.sourceforge.net/baghira/%{_name}-0.3r.tar.bz2
@@ -29,6 +29,7 @@ Source8:	http://kde-look.org/content/files/9152-Aqua1_1600x1200.jpg
 # Source8-md5:	ac3ee4acd3966cdb616c23e283ecede8
 Source9:	ftp://distfiles.pld-linux.org/src/%{_name}-ksplash.tar.gz
 # Source9-md5:	466cee31900639b5d633f008890b9f18
+Source10:	Baghira-Lime.kcsrc
 Patch0:		%{name}-gcc34fix.patch
 URL:		http://www.kde-look.org/content/show.php?content=8692
 # Also:	http://www.kde-look.org/content/show.php?content=11149
@@ -261,6 +262,7 @@ install %{SOURCE5} $RPM_BUILD_ROOT%{_datadir}/wallpapers/baghira-1600x1200.jpg
 install %{SOURCE6} $RPM_BUILD_ROOT%{_datadir}/wallpapers/aqua-baghira-1024x768.jpg
 install %{SOURCE7} $RPM_BUILD_ROOT%{_datadir}/wallpapers/aqua-baghira-1280x1024.jpg
 install %{SOURCE8} $RPM_BUILD_ROOT%{_datadir}/wallpapers/aqua-baghira-1600x1200.jpg
+install %{SOURCE10} $RPM_BUILD_ROOT%{_datadir}/apps/kdisplay/color-schemes/Lime\ Baghira.kcsrc
 
 install -d $RPM_BUILD_ROOT%{_datadir}/apps/ksplash/Themes
 cd AquaBaghira-0.5/Splash
