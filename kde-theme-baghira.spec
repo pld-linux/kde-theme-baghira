@@ -1,18 +1,34 @@
 
 %define		_name	baghira
-%define		_name_ver	0.3q
+%define		_name_ver	0.3r
 
 Summary:	KDE theme - %{_name}
 Summary(pl):	Motyw KDE - %{_name}
 Name:		kde-theme-%{_name}
 Version:	%{_name_ver}
-Release:	2
+Release:	1
 License:	Not specified
 Group:		Themes
-Source0:	http://dl.sourceforge.net/baghira/%{_name}-0.3q.tar.bz2
-# Source0-md5:	5ce2db262f061f6fbb0c026bf2c77d82
-Source1:	http://dl.sourceforge.net/baghira/%{_name}-deco-0.4-pre4.tar.bz2
-# Source1-md5:	7bf8cfb50c85535b120238f23b514f2a
+Source0:	http://dl.sourceforge.net/baghira/%{_name}-0.3r.tar.bz2
+# Source0-md5:	b4e359e4300f6f428255239f70e8dc3a
+Source1:	http://dl.sourceforge.net/baghira/%{_name}-deco-0.4-pre5.tar.bz2
+# Source1-md5:	488f581685e02584ee9be50bd230a50b
+Source2:	http://kde-look.org/content/files/8993-AquaBaghira-0.5.tar.gz
+# Source2-md5:	d5fbd627b8f50a0c24ccd1610e8cd248
+Source3:	http://kde-look.org/content/files/9157-kde1_1024x768.jpg
+# Source3-md5:	39319dcbeb8d7b315a29e9adfffe1885
+Source4:	http://kde-look.org/content/files/9156-kde1_1280x1024.jpg
+# Source4-md5:	fb60d3af4ee9fe45006a53ba3b58e178
+Source5:	http://kde-look.org/content/files/9155-kde1_1600x1200.jpg
+# Source5-md5:	d69b3c47c32f9b87705e4f9ae0f84747
+Source6:	http://kde-look.org/content/files/9154-Aqua1_1024x768.jpg
+# Source6-md5:	907a13744968b1980b58c0b2ef8a0c1d
+Source7:	http://kde-look.org/content/files/9153-Aqua1_1280x1024.jpg
+# Source7-md5:	b08fa75e30ffed1fc2c739d858d776c0
+Source8:	http://kde-look.org/content/files/9152-Aqua1_1600x1200.jpg
+# Source8-md5:	ac3ee4acd3966cdb616c23e283ecede8
+Source9:	ftp://distfiles.pld-linux.org/src/%{_name}-ksplash.tar.gz
+# Source9-md5:	466cee31900639b5d633f008890b9f18
 Patch0:		%{name}-gcc34fix.patch
 URL:		http://www.kde-look.org/content/show.php?content=8692
 # Also:	http://www.kde-look.org/content/show.php?content=11149
@@ -20,6 +36,7 @@ BuildRequires:	autoconf
 BuildRequires:	automake
 BuildRequires:	freetype-devel
 BuildRequires:	kdelibs-devel
+BuildRequires:	kdebase-devel
 #BuildRequires:	unsermake
 Requires:	kdelibs
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
@@ -172,7 +189,6 @@ Kopete emoticons from %{_name} theme.
 %description -n kopete-emoticons-%{_name} -l pl
 Emotikony do kopete z tematu %{_name}.
 
-
 %package -n kde-decoration-icewm-%{_name}
 Summary:	Icewm window decoration for kwin - %{_name}
 Summary(pl):	Dekoracja icewm dla kwin - %{_name}
@@ -198,7 +214,7 @@ Kwin decoration - %{_name}.
 Dekoracja kwin - %{_name}.
 
 %prep
-%setup -q -n %{_name}-%{version} -a1
+%setup -q -n %{_name} -a1 -a2 -a9
 %patch0 -p1
 
 %build
@@ -213,7 +229,7 @@ cp -f /usr/share/automake/config.sub admin
 
 %{__make}
 
-cd %{_name}-deco-0.4-pre4
+cd %{_name}-deco-0.4-pre5
 cp -f /usr/share/automake/config.sub admin
 %configure \
 	--with-qt-libraries=%{_libdir}
@@ -224,8 +240,9 @@ rm -rf $RPM_BUILD_ROOT
 
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT
+install bab/scripts/* $RPM_BUILD_ROOT%{_bindir}
 
-cd %{_name}-deco-0.4-pre4
+cd %{_name}-deco-0.4-pre5
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT
 install -d $RPM_BUILD_ROOT%{_datadir}/apps/kdisplay/color-schemes
@@ -236,6 +253,32 @@ install -d $RPM_BUILD_ROOT%{_desktopdir}/kde
 mv $RPM_BUILD_ROOT{%{_datadir}/applnk/Settings/LookNFeel,%{_desktopdir}/kde}/kcmbaghira.desktop
 echo "Categories=Qt;KDE;X-KDE-settings-looknfeel;" >> $RPM_BUILD_ROOT%{_desktopdir}/kde/kcmbaghira.desktop
 echo "OnlyShowIn=KDE;" >> $RPM_BUILD_ROOT%{_desktopdir}/kde/kcmbaghira.desktop
+
+install -d $RPM_BUILD_ROOT%{_datadir}/wallpapers
+install %{SOURCE3} $RPM_BUILD_ROOT%{_datadir}/wallpapers/baghira-1024x768.jpg
+install %{SOURCE4} $RPM_BUILD_ROOT%{_datadir}/wallpapers/baghira-1280x1024.jpg
+install %{SOURCE5} $RPM_BUILD_ROOT%{_datadir}/wallpapers/baghira-1600x1200.jpg
+install %{SOURCE6} $RPM_BUILD_ROOT%{_datadir}/wallpapers/aqua-baghira-1024x768.jpg
+install %{SOURCE7} $RPM_BUILD_ROOT%{_datadir}/wallpapers/aqua-baghira-1280x1024.jpg
+install %{SOURCE8} $RPM_BUILD_ROOT%{_datadir}/wallpapers/aqua-baghira-1600x1200.jpg
+
+install -d $RPM_BUILD_ROOT%{_datadir}/apps/ksplash/Themes
+cd AquaBaghira-0.5/Splash
+for I in *; do
+	cp -r $I $RPM_BUILD_ROOT%{_datadir}/apps/ksplash/Themes/$I-Classic
+	cp -r $I $RPM_BUILD_ROOT%{_datadir}/apps/ksplash/Themes/$I-Snow
+done
+cd ../Bar/Classic
+for I in *; do
+	cp -r $I/* $RPM_BUILD_ROOT%{_datadir}/apps/ksplash/Themes/$I-Classic/
+done
+cd ../Snow
+for I in *; do
+	cp -r $I/* $RPM_BUILD_ROOT%{_datadir}/apps/ksplash/Themes/$I-Snow/
+done
+
+cd ../../../baghira-ksplash
+cp -r * $RPM_BUILD_ROOT%{_datadir}/apps/ksplash/Themes/
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -254,7 +297,16 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_libdir}/kde3/plugins/styles/*.so
 %{_datadir}/apps/kstyle/themes/*.themerc
 %{_desktopdir}/kde/kcmbaghira.desktop
+%attr(755,root,root) %{_bindir}/*
 
 %files -n kde-colorscheme-%{_name}
 %defattr(644,root,root,755)
 %{_datadir}/apps/kdisplay/color-schemes/*.kcsrc
+
+%files -n kde-wallpaper-%{_name}
+%defattr(644,root,root,755)
+%{_datadir}/wallpapers/*
+
+%files -n kde-splashplugin-%{_name}
+%defattr(644,root,root,755)
+%{_datadir}/apps/ksplash/Themes/*
