@@ -1,7 +1,7 @@
 # TODO: icons
 
 %define		_name	baghira
-%define		_name_ver	0.4c
+%define		_name_ver	0.4d
 
 Summary:	KDE theme - %{_name}
 Summary(pl):	Motyw KDE - %{_name}
@@ -11,7 +11,7 @@ Release:	1
 License:	Not specified
 Group:		Themes
 Source0:	http://osdn.dl.sourceforge.net/sourceforge/baghira/%{_name}-%{_name_ver}.tar.bz2
-# Source0-md5:	eced2848f14dddaf359bc777033a95e0
+# Source0-md5:	240b2af8fdcfb18baab1715263185803
 Source1:	http://ep09.pld-linux.org/~havner/aqua-wallpapers.tar.bz2
 # Source1-md5:	a18467bf8195ee7ad0472aff57a6770e
 Source2:	http://kde-look.org/content/files/8993-AquaBaghira-0.5.tar.gz
