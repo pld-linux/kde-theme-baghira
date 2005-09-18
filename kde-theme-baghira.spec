@@ -1,4 +1,8 @@
-# TODO: bootsplash
+# TODO:
+# - bootsplash
+# - unpackaged files belong to which package?
+#   /usr/lib/libbaghirastarter.la
+#   /usr/lib/libbaghirastarter.so
 
 %define		_name	baghira
 %define		_name_ver	0.6e
@@ -7,7 +11,7 @@ Summary:	KDE theme - %{_name}
 Summary(pl):	Motyw KDE - %{_name}
 Name:		kde-theme-%{_name}
 Version:	%{_name_ver}
-Release:	1
+Release:	2
 License:	Not specified
 Group:		Themes
 Source0:	http://dl.sourceforge.net/baghira/%{_name}-%{_name_ver}.tar.bz2
@@ -37,8 +41,11 @@ BuildRequires:	automake
 BuildRequires:	freetype-devel
 BuildRequires:	kdelibs-devel
 BuildRequires:	kdebase-devel
-#BuildRequires:	unsermake
-Requires:	kdelibs
+Requires:	kde-decoration-%{_name}
+Requires:	kde-style-%{_name}
+Requires:	kde-colorscheme-%{_name}
+Requires:	kde-wallpaper-%{_name}
+Requires:	kde-splashplugin-%{_name}
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -272,6 +279,8 @@ cp -r * $RPM_BUILD_ROOT%{_datadir}/apps/ksplash/Themes/
 
 %clean
 rm -rf $RPM_BUILD_ROOT
+
+%files
 
 %files -n kde-decoration-%{_name}
 %defattr(644,root,root,755)
