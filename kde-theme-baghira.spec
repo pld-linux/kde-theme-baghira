@@ -1,21 +1,18 @@
 # TODO:
 # - bootsplash
-# - unpackaged files belong to which package?
-#   /usr/lib/libbaghirastarter.la
-#   /usr/lib/libbaghirastarter.so
 
 %define		_name	baghira
-%define		_name_ver	0.6e
+%define		_name_ver	0.7
 
 Summary:	KDE theme - %{_name}
 Summary(pl):	Motyw KDE - %{_name}
 Name:		kde-theme-%{_name}
 Version:	%{_name_ver}
-Release:	2
+Release:	1
 License:	Not specified
 Group:		Themes
 Source0:	http://dl.sourceforge.net/baghira/%{_name}-%{_name_ver}.tar.bz2
-# Source0-md5:	987b598c00ba09dad8ff62ea405f9873
+# Source0-md5:	805d137c45f90bb3e9d3458d133aaf7a
 Source1:	http://ep09.pld-linux.org/~havner/aqua-wallpapers.tar.bz2
 # Source1-md5:	a18467bf8195ee7ad0472aff57a6770e
 Source2:	http://kde-look.org/content/files/8993-AquaBaghira-0.5.tar.gz
@@ -219,7 +216,7 @@ Kwin decoration - %{_name}.
 Dekoracja kwin - %{_name}.
 
 %prep
-%setup -q -n %{_name}-%{_name_ver} -a1 -a2 -a9
+%setup -q -n %{_name}-release -a1 -a2 -a9
 %ifarch ppc sparc
 sed -i -e "s/#define HAVE_PPC.*/#define HAVE_PPC 1/g" ppc.h
 %endif
@@ -292,12 +289,20 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %{_libdir}/kde3/kstyle_baghira_config.la
 %attr(755,root,root) %{_libdir}/kde3/kstyle_baghira_config.so
+%{_libdir}/kde3/konqsidebar_baghirasidebar.la
+%attr(755,root,root) %{_libdir}/kde3/konqsidebar_baghirasidebar.so
+%{_libdir}/libbaghirastarter.la
+%attr(755,root,root) %{_libdir}/libbaghirastarter.so
+%{_libdir}/usermanager_panelapplet.la
+%attr(755,root,root) %{_libdir}/usermanager_panelapplet.so
 %{_libdir}/kde3/b_menu_panelapplet.la
 %attr(755,root,root) %{_libdir}/kde3/b_menu_panelapplet.so
 %{_libdir}/kde3/plugins/styles/*.la
 %attr(755,root,root) %{_libdir}/kde3/plugins/styles/*.so
 %{_datadir}/apps/kstyle/themes/*.themerc
 %{_datadir}/apps/kicker/applets/*.desktop
+%{_datadir}/apps/konqsidebartng/*/*.desktop
+%{_datadir}/apps/baghira/poof.png
 %attr(755,root,root) %{_bindir}/*
 %{_iconsdir}/crystalsvg/*/*/*
 
