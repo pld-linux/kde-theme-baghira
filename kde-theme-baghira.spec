@@ -217,9 +217,6 @@ Dekoracja kwin - %{_name}.
 
 %prep
 %setup -q -n %{_name}-release -a1 -a2 -a9
-%ifarch ppc sparc
-sed -i -e "s/#define HAVE_PPC.*/#define HAVE_PPC 1/g" ppc.h
-%endif
 
 %build
 kde_htmldir="%{_kdedocdir}"; export kde_htmldir
