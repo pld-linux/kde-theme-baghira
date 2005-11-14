@@ -8,7 +8,7 @@ Summary:	KDE theme - %{_name}
 Summary(pl):	Motyw KDE - %{_name}
 Name:		kde-theme-%{_name}
 Version:	%{_name_ver}
-Release:	1
+Release:	2
 License:	Not specified
 Group:		Themes
 Source0:	http://dl.sourceforge.net/baghira/%{_name}-%{_name_ver}.tar.bz2
