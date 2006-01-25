@@ -227,7 +227,7 @@ cp -f /usr/share/automake/config.sub admin
 
 %configure \
 	--with-qt-libraries=%{_libdir} \
-	--enable-final
+	--disable-final
 
 %{__make}
 
