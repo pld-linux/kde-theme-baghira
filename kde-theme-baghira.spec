@@ -2,32 +2,32 @@
 # - bootsplash
 
 %define		_name	baghira
-%define		_name_ver	0.7
+%define		_name_ver	0.8
 
 Summary:	KDE theme - %{_name}
 Summary(pl):	Motyw KDE - %{_name}
 Name:		kde-theme-%{_name}
 Version:	%{_name_ver}
-Release:	2
+Release:	1
 License:	Not specified
 Group:		Themes
 Source0:	http://dl.sourceforge.net/baghira/%{_name}-%{_name_ver}.tar.bz2
-# Source0-md5:	805d137c45f90bb3e9d3458d133aaf7a
+# Source0-md5:	d76e04020c628ba5de69d066a66221f8
 Source1:	http://ep09.pld-linux.org/~havner/aqua-wallpapers.tar.bz2
 # Source1-md5:	a18467bf8195ee7ad0472aff57a6770e
-Source2:	http://kde-look.org/content/files/8993-AquaBaghira-0.5.tar.gz
+Source2:	http://www.kde-look.org/content/files/8993-AquaBaghira-0.5.tar.gz
 # Source2-md5:	d5fbd627b8f50a0c24ccd1610e8cd248
-Source3:	http://kde-look.org/content/files/9157-kde1_1024x768.jpg
+Source3:	http://www.kde-look.org/content/files/9157-kde1_1024x768.jpg
 # Source3-md5:	39319dcbeb8d7b315a29e9adfffe1885
-Source4:	http://kde-look.org/content/files/9156-kde1_1280x1024.jpg
+Source4:	http://www.kde-look.org/content/files/9156-kde1_1280x1024.jpg
 # Source4-md5:	fb60d3af4ee9fe45006a53ba3b58e178
-Source5:	http://kde-look.org/content/files/9155-kde1_1600x1200.jpg
+Source5:	http://www.kde-look.org/content/files/9155-kde1_1600x1200.jpg
 # Source5-md5:	d69b3c47c32f9b87705e4f9ae0f84747
-Source6:	http://kde-look.org/content/files/9154-Aqua1_1024x768.jpg
+Source6:	http://www.kde-look.org/content/files/9154-Aqua1_1024x768.jpg
 # Source6-md5:	907a13744968b1980b58c0b2ef8a0c1d
-Source7:	http://kde-look.org/content/files/9153-Aqua1_1280x1024.jpg
+Source7:	http://www.kde-look.org/content/files/9153-Aqua1_1280x1024.jpg
 # Source7-md5:	b08fa75e30ffed1fc2c739d858d776c0
-Source8:	http://kde-look.org/content/files/9152-Aqua1_1600x1200.jpg
+Source8:	http://www.kde-look.org/content/files/9152-Aqua1_1600x1200.jpg
 # Source8-md5:	ac3ee4acd3966cdb616c23e283ecede8
 Source9:	ftp://distfiles.pld-linux.org/src/%{_name}-ksplash.tar.gz
 # Source9-md5:	466cee31900639b5d633f008890b9f18
@@ -216,7 +216,7 @@ Kwin decoration - %{_name}.
 Dekoracja kwin - %{_name}.
 
 %prep
-%setup -q -n %{_name}-release -a1 -a2 -a9
+%setup -q -n %{_name}-%{_name_ver} -a1 -a2 -a9
 
 %build
 kde_htmldir="%{_kdedocdir}"; export kde_htmldir
