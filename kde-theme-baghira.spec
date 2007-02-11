@@ -112,7 +112,7 @@ Requires:	kdm
 %description -n kdm-user-pictures-%{_name}
 KDM user picture - %{_name}.
 
-%description -n kdm-user-pictures-%{_name} -lpl
+%description -n kdm-user-pictures-%{_name} -l pl
 Obrazki dla u¿ytkowników w KDM - %{_name}.
 
 %package -n kde-splashplugin-%{_name}
