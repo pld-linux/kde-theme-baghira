@@ -5,7 +5,7 @@
 %define		_name_ver	0.8
 
 Summary:	KDE theme - %{_name}
-Summary(pl.UTF-8):   Motyw KDE - %{_name}
+Summary(pl.UTF-8):	Motyw KDE - %{_name}
 Name:		kde-theme-%{_name}
 Version:	%{_name_ver}
 Release:	1
@@ -53,7 +53,7 @@ Motyw KDE %{_name}.
 
 %package -n kde-style-%{_name}
 Summary:	KDE style - %{_name}
-Summary(pl.UTF-8):   Styl do KDE - %{_name}
+Summary(pl.UTF-8):	Styl do KDE - %{_name}
 Group:		Themes
 Requires:	kdelibs
 
@@ -69,7 +69,7 @@ bez slickera.
 
 %package -n kde-icons-%{_name}
 Summary:	KDE icon theme - %{_name}
-Summary(pl.UTF-8):   Motyw ikon do kde - %{_name}
+Summary(pl.UTF-8):	Motyw ikon do kde - %{_name}
 Group:		Themes
 Requires:	kdelibs
 
@@ -81,7 +81,7 @@ Requires:	kdelibs
 
 %package -n kde-colorscheme-%{_name}
 Summary:	Color scheme for KDE style - %{_name}
-Summary(pl.UTF-8):   Schemat kolorów do stylu KDE - %{_name}
+Summary(pl.UTF-8):	Schemat kolorów do stylu KDE - %{_name}
 Group:		Themes
 Requires:	kdebase-core
 
@@ -93,7 +93,7 @@ Schemat kolorów do stylu KDE - %{_name}
 
 %package -n kde-wallpaper-%{_name}
 Summary:	KDE wallpaper - %{_name}
-Summary(pl.UTF-8):   Tapeta do KDE - %{_name}
+Summary(pl.UTF-8):	Tapeta do KDE - %{_name}
 Group:		Themes
 Requires:	kdelibs
 
@@ -105,7 +105,7 @@ Tapeta pasująca do motywu %{_name}.
 
 %package -n kdm-user-pictures-%{_name}
 Summary:	KDM user picture - %{_name}
-Summary(pl.UTF-8):   Obrazki dla użytkowników w KDM - %{_name}
+Summary(pl.UTF-8):	Obrazki dla użytkowników w KDM - %{_name}
 Group:		Themes
 Requires:	kdm
 
@@ -117,7 +117,7 @@ Obrazki dla użytkowników w KDM - %{_name}.
 
 %package -n kde-splashplugin-%{_name}
 Summary:	ksplash plugin %{_name}
-Summary(pl.UTF-8):   Wtyczka ksplash %{_name}
+Summary(pl.UTF-8):	Wtyczka ksplash %{_name}
 Group:		X11/Amusements
 Requires:	kdebase-desktop
 
@@ -129,7 +129,7 @@ Wtyczka ksplash %{_name}
 
 %package -n kde-colorscheme-%{_name}-thinkeramik
 Summary:	Color scheme for %{_name} theme to go with thinkeramik style
-Summary(pl.UTF-8):   Schemat kolorów dla motywu %{_name} pasujący do stylu thinkeramik
+Summary(pl.UTF-8):	Schemat kolorów dla motywu %{_name} pasujący do stylu thinkeramik
 Group:		Themes
 Requires:	kdebase-core
 Requires:	kde-style-thinkeramik >= 3.1.4
@@ -142,7 +142,7 @@ Schemat kolorów dla motywu %{_name} pasujący do stylu thinkeramik.
 
 %package -n kde-colorscheme-%{_name}-activeheart
 Summary:	Color scheme for %{_name} theme to go with activeheart style
-Summary(pl.UTF-8):   Schemat kolorów dla motywu %{_name} pasujący do stylu activeheart
+Summary(pl.UTF-8):	Schemat kolorów dla motywu %{_name} pasujący do stylu activeheart
 Group:		Themes
 Requires:	kdebase-core
 Requires:	kde-style-activeheart >= 1.1.7-2
@@ -155,7 +155,7 @@ Schemat kolorów dla motywu %{_name} pasujący do stylu thinkeramik.
 
 %package -n kde-splash-%{_name}
 Summary:	Splash screen %{_name} theme
-Summary(pl.UTF-8):   Obrazek startowy dla motywu %{_name}
+Summary(pl.UTF-8):	Obrazek startowy dla motywu %{_name}
 Group:		Themes
 Requires:	kdebase-desktop >= 9:3.1.90
 
@@ -167,7 +167,7 @@ Obrazek startowy dla motywu %{_name}.
 
 %package -n kde-kside-%{_name}
 Summary:	Kicker sidebar from %{_name}
-Summary(pl.UTF-8):   Boczny pasek do menu kde z motywu %{_name}
+Summary(pl.UTF-8):	Boczny pasek do menu kde z motywu %{_name}
 Group:		Themes
 Requires:	kdebase-kicker >= 9:3.1.90.030726-2
 Provides:	kde-kside
@@ -181,7 +181,7 @@ Boczny pasek do menu kde z motywu %{_name}.
 
 %package -n kopete-emoticons-%{_name}
 Summary:	Kopete emoticons from %{_name} theme
-Summary(pl.UTF-8):   Emotikony do kopete z tematu %{_name}
+Summary(pl.UTF-8):	Emotikony do kopete z tematu %{_name}
 Group:		Themes
 Requires:	kdenetwork-kopete
 
@@ -193,7 +193,7 @@ Emotikony do kopete z tematu %{_name}.
 
 %package -n kde-decoration-icewm-%{_name}
 Summary:	Icewm window decoration for kwin - %{_name}
-Summary(pl.UTF-8):   Dekoracja icewm dla kwin - %{_name}
+Summary(pl.UTF-8):	Dekoracja icewm dla kwin - %{_name}
 Group:		Themes
 Requires:	kde-decoration-icewm
 
@@ -205,7 +205,7 @@ Dekoracja icewm dla kwin - %{_name}.
 
 %package -n kde-decoration-%{_name}
 Summary:	Kwin decoration - %{_name}
-Summary(pl.UTF-8):   Dekoracja kwin - %{_name}
+Summary(pl.UTF-8):	Dekoracja kwin - %{_name}
 Group:		Themes
 Requires:	kdebase-desktop-libs
 
