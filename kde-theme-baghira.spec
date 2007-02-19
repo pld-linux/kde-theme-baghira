@@ -86,10 +86,10 @@ Group:		Themes
 Requires:	kdebase-core
 
 %description -n kde-colorscheme-%{_name}
-Color scheme for KDE style - %{_name}
+Color scheme for KDE style - %{_name}.
 
 %description -n kde-colorscheme-%{_name} -l pl.UTF-8
-Schemat kolorów do stylu KDE - %{_name}
+Schemat kolorów do stylu KDE - %{_name}.
 
 %package -n kde-wallpaper-%{_name}
 Summary:	KDE wallpaper - %{_name}
@@ -122,10 +122,10 @@ Group:		X11/Amusements
 Requires:	kdebase-desktop
 
 %description -n kde-splashplugin-%{_name}
-ksplash plugin %{_name}
+ksplash plugin %{_name}.
 
 %description -n kde-splashplugin-%{_name} -l pl.UTF-8
-Wtyczka ksplash %{_name}
+Wtyczka ksplash %{_name}.
 
 %package -n kde-colorscheme-%{_name}-thinkeramik
 Summary:	Color scheme for %{_name} theme to go with thinkeramik style
