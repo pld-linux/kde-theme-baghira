@@ -8,7 +8,7 @@ Summary:	KDE theme - %{_name}
 Summary(pl.UTF-8):	Motyw KDE - %{_name}
 Name:		kde-theme-%{_name}
 Version:	%{_name_ver}
-Release:	1
+Release:	2
 License:	GPL v2
 Group:		Themes
 Source0:	http://dl.sourceforge.net/baghira/%{_name}-%{_name_ver}.tar.bz2
@@ -299,6 +299,7 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/apps/kstyle/themes/*.themerc
 %{_datadir}/apps/kicker/applets/*.desktop
 %{_datadir}/apps/konqsidebartng/*/*.desktop
+%dir %{_datadir}/apps/baghira
 %{_datadir}/apps/baghira/poof.png
 %attr(755,root,root) %{_bindir}/*
 %{_iconsdir}/crystalsvg/*/*/*
